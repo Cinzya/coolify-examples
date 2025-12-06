@@ -1,13 +1,9 @@
 services:
-  api:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        NPM_TOKEN: ${NPM_TOKEN:?NPM_TOKEN not set}
-    ports:
-      - "3000"
+  analytics:
+    image: nginx
     environment:
-      - PORT=3000
-      - DB_CONNECTION=postgres
-      - TEST=${TEST}
+      - API_URL=$SERVICE_FQDN_API

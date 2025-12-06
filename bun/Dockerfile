@@ -10,19 +10,13 @@ RUN bun install --frozen-lockfile
 # Now copy the rest of your source code
 COPY . .
 
-FROM base AS build
+#FROM base AS build
 
-# Declare the build argument
-ARG SOURCE_COMMIT
-# Set the environment variable using the build argument
-ENV SOURCE_COMMIT=${SOURCE_COMMIT}
+#ENV NODE_ENV=production
 
-ENV NODE_ENV=production
+#RUN bun run build
 
-# Run build script
-# RUN bun run build
-
-FROM build AS release
+FROM base AS release
 USER bun
 EXPOSE 3000/tcp
 ENTRYPOINT [ "bun", "run", "index.ts" ]
