@@ -22,7 +22,8 @@
 ```
 
 2. Select `Dockerfile` as the `Build Pack` in Coolify.
-3. Set `Dockerfile Location` to the location of your `Dockerfile` (e.g., `/Dockerfile`).
+3. Set `Ports Exposed` to `3000` (or any port you set).
+4. Set `Dockerfile Location` to the location of your `Dockerfile` (e.g., `/Dockerfile`).
 
 ## Nixpacks
 
