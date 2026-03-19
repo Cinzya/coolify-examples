@@ -1,0 +1,6 @@
+services:
+  main:
+    image: alpine:latest
+    volumes:
+      - ./scripts:/scripts:ro
+    command: ["cat", "/scripts/bootstrap_db.sh"]
